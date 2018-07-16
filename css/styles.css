@@ -146,7 +146,8 @@ nav h1 a {
   padding: 0 30px 25px;
   text-align: left;
   /*width: 270px;*/
-  width: none;
+  min-width: 20em;
+  max-width: 20em;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -267,12 +268,38 @@ nav h1 a {
   overflow: hidden;
   padding: 0 20px 20px;
   position: relative;
-  width: 75%;
-  /*width: 85%;*/
+  width: 85%;
 }
 #reviews-list li p {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* ====================== Responsive Design ====================== */
+#restaurants-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* ====================== Media Design ====================== */
+@media only screen and (max-width: 375px) {
+	#map {
+		height: 22em;
+	}
+	#restaurants-list li {
+		min-width: 20em;
+	}
+
+	.filter-options {
+		height: 1%;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	#neighborhoods-select, #cuisines-select {
+		min-width: 90%;
+	}
 }
