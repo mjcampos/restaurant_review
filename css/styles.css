@@ -105,7 +105,7 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
-  width: 100%;
+  min-height: 100%;
   height: 5em;
   background-color: #3397DB;
   align-items: center;
@@ -208,7 +208,6 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  /*width: 50%;*/
   width: 100%;
 }
 #restaurant-name {
@@ -307,11 +306,15 @@ nav h1 a {
 	#neighborhoods-select, #cuisines-select {
 		min-width: 90%;
 	}
+
+	.inside #map-container {
+		
+	}
 }
 
 @media only screen and (min-width: 401px) and (max-width: 800px) {
 	#map {
-		height: 22em;
+		height: 10em;
 	}
 
 	.filter-options {
@@ -322,4 +325,8 @@ nav h1 a {
 	#neighborhoods-select, #cuisines-select {
 		min-width: 95%;
 	}
+}
+
+@media only screen and (min-width: 801px) {
+	
 }
