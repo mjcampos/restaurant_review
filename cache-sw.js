@@ -22,6 +22,8 @@ let cacheFiles = [
 
 // Install cache
 self.addEventListener('install', function(event) {
+	console.log("Installing Service Worker: ", event);
+
 	event.waitUntil(
 		caches
 			.open(restaurantCache)
@@ -32,7 +34,7 @@ self.addEventListener('install', function(event) {
 
 // Fetch results from cache
 self.addEventListener('fetch', function(event) {
-		// console.log("Fetch Service Worker", event);
+		console.log("Fetch Service Worker: ", event);
 
 		event.respondWith(
 			caches
@@ -43,7 +45,7 @@ self.addEventListener('fetch', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
-	console.log("Activate Service Worker", event);
+	console.log("Activate Service Worker: ", event);
 
 	event.waitUntil(
 		caches.keys().then(cacheNames => {

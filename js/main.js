@@ -13,12 +13,8 @@ if (navigator.serviceWorker) {
 	navigator.serviceWorker.register('/cache-sw.js', {
 		scope: '/'
 	})
-	.then(registration => {
-		console.log("Service Worker Registered: ", registration);
-	})
-	.catch(err => {
-		console.error("Service Worker registration failed: ", err);
-	});
+	.then(registration => console.log("Service Worker Registered: ", registration))
+	.catch(err => console.error("Service Worker registration failed: ", err));
 }
 
 /**
