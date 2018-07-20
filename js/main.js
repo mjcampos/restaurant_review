@@ -5,6 +5,23 @@ var newMap
 var markers = []
 
 /**
+* When the program begins we need to register a service worker.
+*/
+// Check if serviceWorker exists in navigator
+if (navigator.serviceWorker) {
+	// Register cache service worker
+	navigator.serviceWorker.register('/cache-sw.js', {
+		scope: '/'
+	})
+	.then(registration => {
+		console.log("Service Worker Registered: ", registration);
+	})
+	.catch(err => {
+		console.error("Service Worker registration failed: ", err);
+	});
+}
+
+/**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
